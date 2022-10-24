@@ -1,22 +1,24 @@
+package AgendaBD;
+
 import java.sql.*;
 
 public class App3 {
     public static void main(String[] args) throws Exception {
-        String dbURL = "jdbc:mysql://localhost:3306/ead";
-        String username = "root";
-        String password = "root";
+        String dbURL = "jdbc:postgresql://localhost:5432/ead";
+        String username = "postgres";
+        String password = "147";
         Connection conn = DriverManager.getConnection(dbURL, username, password);
 
 
-        Item item = new Item(3, "SSD", 299.89);
+        Pessoa pessoa = new Pessoa("Moisés", "SSD", "62981146557");
 
 
-        String sql = "INSERT INTO Item (idItem, nome, preco) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO agenda (nome, dataNascimento, contato) VALUES (?, ?, ?)";
         PreparedStatement statement = conn.prepareStatement(sql);
 
-        statement.setInt(1, item.idItem);
-        statement.setString(2, item.nome);
-        statement.setDouble(3, item.preco);
+        statement.setString(1, pessoa.nome);
+        statement.setString(2, pessoa.dataNascimento);
+        statement.setString(3, pessoa.contato);
 
         int rowsInserted = statement.executeUpdate();
 

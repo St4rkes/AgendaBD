@@ -1,5 +1,7 @@
-package AgendaBD;
+package ArryList;
 import java.sql.*;
+
+import AgendaBD.Pessoa;
 
 public class App5 {
     public static void main(String[] args) throws Exception {
