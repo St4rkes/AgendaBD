@@ -1,3 +1,5 @@
+package AgendaBD;
+
 import java.sql.*;
 
 public class App6 {

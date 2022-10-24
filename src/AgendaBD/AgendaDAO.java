@@ -1,5 +1,7 @@
-import java.sql.*;
-import java.Agenda;
+package AgendaBD;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class AgendaDAO {
 
