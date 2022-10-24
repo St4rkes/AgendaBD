@@ -24,7 +24,7 @@ public class App4 {
             Pessoa p1 = new Pessoa(nome, dataNascimento, contato);
             Pessoa.add(p1);
         }
-        
         System.out.println(pessoa);
+        
     }
 }

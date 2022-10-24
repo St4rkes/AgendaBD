@@ -3,48 +3,49 @@ package AgendaBD;
 import java.sql.*;
 
 public class App6 {
+   
     public static void main(String[] args) throws Exception {
-        String dbURL = "jdbc:mysql://localhost:3306/ead";
-        String username = "root";
-        String password = "root";
+        String dbURL = "jdbc:postgresql://localhost:5432/ead";
+        String username = "postgres";
+        String password = "147";
         Connection conn = DriverManager.getConnection(dbURL, username, password);
 
 
-        String sql = "SELECT * FROM item WHERE idItem = ?";
+        String sql = "SELECT * FROM agenda WHERE nome = ?";
 
         PreparedStatement statement = conn.prepareStatement(sql);
         
-        statement.setInt(1, 2);
+        statement.setString(1, "Moisés");
 
         ResultSet registros = statement.executeQuery();
 
-        Item item;
+        Pessoa pessoa;
         if (registros.next()) {
-            int id = registros.getInt("idItem");
             String nome = registros.getString("nome");
-            double preco = registros.getDouble("preco");
-            item = new Item(id, nome, preco);
-            System.out.println(item);
+            String dataNascimento = registros.getString("dataNascimento");
+            String contato = registros.getString("contato");
+            Pessoa p1 = new Pessoa(nome, dataNascimento, contato);
+            System.out.println(p1);
         }
         else {
-            item = null;
+            pessoa = null;
             System.out.println("Item não encontrado!");
-            System.out.println(item);
+            System.out.println(pessoa);
         }
 
         //Alterando o preco do objeto Item
-        item.preco = 49.90;
+         Pessoa.nome = "Joao";
 
-        sql = "UPDATE item set preco = ? WHERE idItem = ?";
+        sql = "UPDATE agenda set nome = ? WHERE nome = ?";
         statement = conn.prepareStatement(sql);
 
-        statement.setDouble(1, item.preco);
-        statement.setDouble(2, item.idItem);
+        statement.setString(1, Pessoa.nome);
+        statement.setString(2, Pessoa.dataNascimento);
 
         int rowsInserted = statement.executeUpdate();
 
         if (rowsInserted > 0) {
-            System.out.println("Item cadastrado com sucesso!");
+            System.out.println("Nome Alterado com sucesso!");
         }
 
     }

@@ -10,7 +10,7 @@ public class App3 {
         Connection conn = DriverManager.getConnection(dbURL, username, password);
 
 
-        Pessoa pessoa = new Pessoa("Moisés", "SSD", "62981146557");
+        Pessoa pessoa = new Pessoa("Joao", "16/01/2002", "(62)98114-8888");
 
 
         String sql = "INSERT INTO agenda (nome, dataNascimento, contato) VALUES (?, ?, ?)";

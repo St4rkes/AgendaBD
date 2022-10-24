@@ -1,7 +1,7 @@
 package AgendaBD;
 public class Pessoa {
-    String nome;
-    String dataNascimento;
+    static String nome;
+    static String dataNascimento;
     String contato;
     
     public Pessoa(String nome, String dataNascimento, String contato) {
