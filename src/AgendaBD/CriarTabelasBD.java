@@ -12,9 +12,9 @@ public class CriarTabelasBD {
 
         String sql = "CREATE TABLE agenda (" +
                      "id int primary key," +   
-                     "nome varchar," + 
+                     "nome varchar(40)," + 
                      "dataNascimento varchar(40)," + 
-                     "contato varchar)";
+                     "contato varchar(40)";
 
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.executeUpdate();

@@ -28,9 +28,7 @@ public class Main {
         switch(opcao){
             case 1:
                 ArrayList<Pessoa> listar = dao.Listar();
-                for(Pessoa p: listar){
-                    System.out.println(p);
-                } 
+              
             break;
 
             case 2:

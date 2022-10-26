@@ -17,10 +17,10 @@ public class Pessoa {
 
     
 
-    @Override
+    
     public String toString() {
-        return "Pessoa [nome=" + getNome() + ", dataNascimento=" + getDataNascimento() + ", contato=" + getContato() + ", id=" + getId()
-                + "]";
+        return "Nome: " + nome + "DataNascimento: " + getDataNascimento() + "Contato: " + getContato() + "id: " + getId();
+                
     }
 
 

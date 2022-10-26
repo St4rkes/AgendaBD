@@ -22,7 +22,7 @@ public class AgendaDAO {
         //Creat - Inserir dados no BD
         public void inserir(Pessoa pessoa) throws Exception{
     
-            String sql = "INSERT INTO agenda (id, nome, dataNascimento, contato) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO agenda (nome, dataNascimento, contato, id) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = conn.prepareStatement(sql);
 
             statement.setInt(1, pessoa.getId());
