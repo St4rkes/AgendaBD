@@ -76,7 +76,7 @@ public class Main {
                 // break;
 
                 case 5:
-                 System.out.println("Digite o i da pessoa desejada remover");
+                 System.out.println("Digite o ID da pessoa desejada remover");
                     int delete = teclado.nextInt();
                     dao.remover(dao.obterPessoa(delete));
                 break;
