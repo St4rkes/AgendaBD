@@ -3,6 +3,8 @@ package AgendaBD;
 import java.sql.*;
 
 public class CriarTabelasBD {
+    private static int executeUpdate;
+
     public static void main(String[] args) throws Exception {
         String dbURL = "jdbc:postgresql://localhost:5432/ead";
         String username = "postgres";
@@ -12,11 +14,11 @@ public class CriarTabelasBD {
 
         String sql = "CREATE TABLE agenda (" +
                      "id int primary key," +   
-                     "nome varchar(40)," + 
-                     "dataNascimento varchar(40)," + 
-                     "contato varchar(40)";
+                     "nome varchar," + 
+                     "dataNascimento varchar," + 
+                     "contato varchar)";
 
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.executeUpdate();
+        executeUpdate = statement.executeUpdate();
     }
 }

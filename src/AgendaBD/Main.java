@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args)throws Exception {
-        try (Scanner teclado = new Scanner(System.in)) {
+        Scanner teclado = new Scanner(System.in); 
             //criando um objeto para manipular os objetos no BDA
       AgendaDAO dao = new AgendaDAO();
             
@@ -42,6 +42,7 @@ public class Main {
 
                 case 3:
                     System.out.println("CADASTRO DE PESSOA:");
+
                     System.out.println("Digite o seu id");
                     int id = teclado.nextInt();
                     
@@ -53,7 +54,7 @@ public class Main {
                     String telefone = teclado.nextLine();
 
                     System.out.println("Sua Data de nascimento");
-                    String data = teclado.nextLine();
+                    String data = teclado.next();
 
                     Pessoa pessoa = new Pessoa(id, nome, telefone, data);
                     dao.inserir(pessoa);
@@ -89,8 +90,11 @@ public class Main {
                 System.out.println("Tente novamente !");
 
             }
-     }
         }
-	
     }
 }
+
+     
+        
+	
+    
