@@ -55,7 +55,7 @@ public class AgendaDAO {
                 pessoa.add(p1);
             }
             
-            System.out.println(pessoa);
+            
             return pessoa;
     
         }
@@ -105,7 +105,7 @@ public class AgendaDAO {
             PreparedStatement statement = conn.prepareStatement(sql);
     
             statement.setInt(1, pessoa.getId());
-            
+
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Item removido com sucesso!");
