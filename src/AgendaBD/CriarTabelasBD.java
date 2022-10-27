@@ -16,7 +16,7 @@ public class CriarTabelasBD {
                      "id int primary key," +   
                      "nome varchar," + 
                      "dataNascimento varchar," + 
-                     "contato varchar)";
+                     "contato varchar";
 
         PreparedStatement statement = conn.prepareStatement(sql);
         executeUpdate = statement.executeUpdate();

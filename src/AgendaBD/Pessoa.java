@@ -19,7 +19,7 @@ public class Pessoa {
 
     
     public String toString() {
-        return "Nome: " + nome + "DataNascimento: " + getDataNascimento() + "Contato: " + getContato() + "id: " + getId();
+        return "Nome: " + nome + " DataNascimento: " + dataNascimento + " Contato: " + contato + "id: " + id;
                 
     }
 

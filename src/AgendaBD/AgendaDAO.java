@@ -105,6 +105,11 @@ public class AgendaDAO {
             PreparedStatement statement = conn.prepareStatement(sql);
     
             statement.setInt(1, pessoa.getId());
+            
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("Item removido com sucesso!");
+            }
         }
         
 

@@ -47,16 +47,15 @@ public class Main {
                     int id = teclado.nextInt();
                     
                     System.out.println("Digite o seu nome");
-                    String nome = teclado.nextLine();
-                    
+                    String nome = teclado.next();
 
                     System.out.println("Seu telefone");
-                    String telefone = teclado.nextLine();
+                    String telefone = teclado.next();
 
                     System.out.println("Sua Data de nascimento");
                     String data = teclado.next();
 
-                    Pessoa pessoa = new Pessoa(id, nome, telefone, data);
+                    Pessoa pessoa = new Pessoa(id, nome, data, telefone);
                     dao.inserir(pessoa);
                     break;
 
