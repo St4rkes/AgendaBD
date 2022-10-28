@@ -19,7 +19,7 @@ public class Pessoa {
 
     
     public String toString() {
-        return "Nome: " + nome + "\n DataNascimento: " + dataNascimento + "\n Contato: " + contato + " id: \n" + id;
+        return " Nome: " + nome + "\n DataNascimento: " + dataNascimento + "\n Contato: " + contato + "\n id: " + id;
                 
     }
 

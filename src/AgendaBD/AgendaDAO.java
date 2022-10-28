@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 
+import javax.sql.rowset.spi.SyncResolver;
+
 public class AgendaDAO {
     
         //conn é declarado como atributo da classe para ser acessível
@@ -15,11 +17,13 @@ public class AgendaDAO {
             public AgendaDAO() throws Exception {
             String dbURL = "jdbc:postgresql://localhost:5432/ead";
             String username = "postgres";
-            String password = "aluno";
+            String password = "147";
             conn = DriverManager.getConnection(dbURL, username, password);
         }
         //CRUD:
         //Creat - Inserir dados no BD
+        
+        
         public void inserir(Pessoa pessoa) throws Exception{
     
             String sql = "INSERT INTO agenda (id, nome, dataNascimento, contato) VALUES (?, ?, ?, ?)";
@@ -32,7 +36,7 @@ public class AgendaDAO {
     
             statement.executeUpdate();
     
-    
+            System.out.println("Pessoa cadastrada com sucesso!");
         }
     
         //Read: Objter os objetos a partir dos dados do BD;

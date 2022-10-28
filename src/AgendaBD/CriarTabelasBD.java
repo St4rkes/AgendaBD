@@ -8,7 +8,7 @@ public class CriarTabelasBD {
     public static void main(String[] args) throws Exception {
         String dbURL = "jdbc:postgresql://localhost:5432/ead";
         String username = "postgres";
-        String password = "aluno";
+        String password = "147";
 
         Connection conn = DriverManager.getConnection(dbURL, username, password);
 
@@ -16,7 +16,7 @@ public class CriarTabelasBD {
                      "id int primary key," +   
                      "nome varchar," + 
                      "dataNascimento varchar," + 
-                     "contato varchar";
+                     "contato varchar)";
 
         PreparedStatement statement = conn.prepareStatement(sql);
         executeUpdate = statement.executeUpdate();
